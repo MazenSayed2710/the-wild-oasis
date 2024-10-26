@@ -120,7 +120,7 @@ function StayDuration() {
       </h2>
 
       {!confirmedStays.length ? (
-        <h1 className="ml-[20px]">
+        <h1 className="ml-[20px] dark:text-gray-100">
           There are no stay duration summary at last{" "}
           {searchParams.get("last") || "7"} days
         </h1>
