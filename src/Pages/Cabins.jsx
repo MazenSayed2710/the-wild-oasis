@@ -28,7 +28,3 @@ function Cabins() {
 }
 
 export default Cabins;
-
-console.log(`1-Handeling errors in edit and add form
-  2-
-  `);

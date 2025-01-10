@@ -4,7 +4,6 @@ function SortSection({ options }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const sortType = searchParams.get("sort") || "";
-  console.log(sortType);
   function handleChange(e) {
     searchParams.set("sort", e.target.value);
     setSearchParams(searchParams);
