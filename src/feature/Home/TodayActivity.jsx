@@ -4,7 +4,7 @@ import { useTodayBookings } from "./useTodayBookings";
 
 function TodayActivity() {
   const { bookings, isLoading } = useTodayBookings();
-
+  console.log(bookings);
   if (isLoading) return <Spinner />;
 
   return (

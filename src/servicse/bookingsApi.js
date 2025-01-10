@@ -110,12 +110,11 @@ export async function getStaysAfterDate(date) {
 export async function getTodayBookings() {
   let today = new Date();
   today.setUTCHours(0, 0, 0, 0);
-
   let { data: bookings, error } = await supabase
     .from("bookings")
     .select("status,numNights,id,guests(fullName,countryFlag)")
     .or(
-      `and(startDate.eq.${today.toISOString().slice(0, 18)},status.eq.unconfirmed),and(endDate.eq.${today.toISOString().slice(0, 18)},status.eq.checked-in)`,
+      `and(startDate.eq.${today.toISOString().slice(0, 19)},status.eq.unconfirmed),and(endDate.eq.${today.toISOString().slice(0, 19)},status.eq.checked-in)`,
     );
 
   if (error) throw new Error(error.message);
