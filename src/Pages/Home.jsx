@@ -16,10 +16,11 @@ function Home() {
   useEffect(() => {
     const dayInMilliseconds = 24 * 60 * 60 * 1000;
     const interval = setInterval(() => {
-      updateBookingDate(723, "startDate", dayInMilliseconds);
-      updateBookingDate(724, "endDate", dayInMilliseconds);
-      updateBookingDate(741, "startDate", dayInMilliseconds);
-    });
+      updateBookingDate(723, "startDate");
+      updateBookingDate(724, "endDate");
+      updateBookingDate(741, "startDate");
+    }, dayInMilliseconds);
+
     return () => clearInterval(interval);
   }, []);
   return (
