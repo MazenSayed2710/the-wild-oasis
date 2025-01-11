@@ -113,14 +113,14 @@ function CabinForm({ setOpenForm, cabin = {}, aim }) {
           <input
             type="file"
             id="photo"
-            className=" w-68 rounded-md p-2"
+            className=" w-68 rounded-md p-2 dark:text-gray-200"
             {...register("image", { required: "This field is requierd" })}
           />
           <p className="ml-10 text-red-800">{errors?.image?.message}</p>
         </div>
         <div className="flex justify-end gap-5">
           <button
-            className="rounded-md border border-gray-300 px-5 py-3"
+            className="rounded-md border border-gray-300 px-5 py-3 dark:text-gray-200"
             onClick={() => setOpenForm(false)}
           >
             Cancel
