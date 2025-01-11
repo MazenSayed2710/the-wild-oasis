@@ -1,11 +1,6 @@
-import { useSearchParams } from "react-router-dom";
-
 const activeStyle = "bg-violet-500 text-gray-200";
 
 function FilterSection({ options, handleClick, isClicked }) {
-  const [searchParams] = useSearchParams();
-  const activeBtn = Number(searchParams.get("last")) || 7;
-  // console.log(typeof searchParams.get("last"));
   return (
     <ul className="flex items-center gap-3 rounded-md bg-gray-50 p-1 dark:bg-gray-800 dark:text-gray-200">
       {options.map((option) => (

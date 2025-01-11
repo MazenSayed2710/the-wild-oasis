@@ -1,23 +1,20 @@
 import { useEffect } from "react";
-import Spinner from "../component/Spinner";
+import { useBookingsAfterDate } from "../feature/Home/useBookingsAfterDate";
+import { useStaysAfterDate } from "../feature/Home/useStaysAfterDate";
 import { useCabins } from "../feature/cabins/useCabins";
+import { updateBookingDate } from "../../utils/helper";
+import Spinner from "../component/Spinner";
 import HomeBody from "../feature/Home/HomeBody";
 import HomeHeader from "../feature/Home/HomeHeader";
 import HomeStatstic from "../feature/Home/HomeStatstic";
-import { useBookingsAfterDate } from "../feature/Home/useBookingsAfterDate";
-import { useStaysAfterDate } from "../feature/Home/useStaysAfterDate";
-import { updateBookingDate } from "../../utils/helper";
-
 function Home() {
   const { isLoading: isLoading1 } = useBookingsAfterDate();
   const { isLoading: isLoading2 } = useStaysAfterDate();
   const { isLoading: isLoading3 } = useCabins();
-
   useEffect(() => {
-    updateBookingDate(723, "startDate");
-    updateBookingDate(724, "endDate");
-    updateBookingDate(741, "startDate");
+    updateBookingDate();
   }, []);
+
   return (
     <div className="m-auto grid max-w-[85rem] gap-10  p-10 text-gray-800">
       <HomeHeader />
