@@ -14,14 +14,9 @@ function Home() {
   const { isLoading: isLoading3 } = useCabins();
 
   useEffect(() => {
-    const dayInMilliseconds = 24 * 60 * 60 * 1000;
-    const interval = setInterval(() => {
-      updateBookingDate(723, "startDate");
-      updateBookingDate(724, "endDate");
-      updateBookingDate(741, "startDate");
-    }, dayInMilliseconds);
-
-    return () => clearInterval(interval);
+    updateBookingDate(723, "startDate");
+    updateBookingDate(724, "endDate");
+    updateBookingDate(741, "startDate");
   }, []);
   return (
     <div className="m-auto grid max-w-[85rem] gap-10  p-10 text-gray-800">
