@@ -4,7 +4,7 @@ import { useEditCabin } from "./useEditCabin";
 import { useCreateCabin } from "./useCreateCabin";
 
 const inputStyle =
-  "w-68 rounded-md border border-gray-500 p-2 dark:bg-gray-800";
+  "w-68 rounded-md border border-gray-500 p-2 dark:bg-gray-800 dark:text-gray-200";
 
 const lableStyle = "font-semibold text-gray-800 dark:text-gray-100";
 
