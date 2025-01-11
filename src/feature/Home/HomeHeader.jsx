@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import FilterSection from "../../component/FilterSection";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function HomeHeader() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -17,6 +17,11 @@ function HomeHeader() {
     setSearchParams(searchParams);
     setIsActive(value);
   }
+
+  useEffect(() => {
+    setIsActive(Number(searchParams.get("last") || 7));
+  }, [searchParams]);
+
   return (
     <div className="flex items-center justify-between">
       <h1 className="text-3xl font-bold dark:text-gray-200">Dashboard</h1>
