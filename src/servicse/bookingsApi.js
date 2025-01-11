@@ -116,7 +116,6 @@ export async function getTodayBookings() {
     .or(
       `and(startDate.eq.${today.toISOString().slice(0, 19)},status.eq.unconfirmed),and(endDate.eq.${today.toISOString().slice(0, 19)},status.eq.checked-in)`,
     );
-
   if (error) throw new Error(error.message);
 
   return bookings;

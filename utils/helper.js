@@ -16,8 +16,9 @@ export const numOfNights = (startDate, endDate) => {
 };
 
 export const updateBookingStartAndEndDate = async (id, typeOfDate) => {
-  const now = new Date();
-  const formattedDate = format(now, "yyyy-MM-dd'T'00:00:00");
+  const today = new Date();
+  today.setUTCHours(0, 0, 0, 0);
+  const formattedDate = format(today, "yyyy-MM-dd'T'00:00:00");
   const { error } = await supabase
     .from("bookings")
     .update({ [typeOfDate]: formattedDate })
@@ -25,19 +26,19 @@ export const updateBookingStartAndEndDate = async (id, typeOfDate) => {
   if (error) throw new Error(error.message);
 };
 export const updateBookingCreatedAtDate = async (id, numOfMonths) => {
-  const now = new Date();
+  const today = new Date();
   let DateAgo;
   if (numOfMonths === 0) {
     DateAgo = new Date(
-      now.getFullYear(),
-      now.getMonth() - numOfMonths,
-      now.getDate() - 5,
+      today.getFullYear(),
+      today.getMonth() - numOfMonths,
+      today.getDate() - 5,
     );
   } else {
     DateAgo = new Date(
-      now.getFullYear(),
-      now.getMonth() - numOfMonths,
-      now.getDate() + 5,
+      today.getFullYear(),
+      today.getMonth() - numOfMonths,
+      today.getDate() + 5,
     );
   }
   const formattedDate = format(DateAgo, "yyyy-MM-dd'T'00:00:00");
