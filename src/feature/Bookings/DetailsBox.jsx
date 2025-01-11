@@ -66,7 +66,9 @@ function DetailsBox({ data }) {
 
         <div className="flex items-center gap-2 ">
           <FaRegCheckCircle className=" text-violet-500" />
-          <p className=" font-semibold">Breakfast included?</p>
+          <p className=" font-semibold dark:text-gray-200">
+            Breakfast included?
+          </p>
           <span>{hasBreakfast ? "Yes" : "No"}</span>
         </div>
         <div

@@ -41,7 +41,9 @@ function BookingDetails() {
     <div className="m-auto flex max-w-[70rem] flex-col gap-10 p-8 text-gray-800">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-5">
-          <h2 className=" text-3xl font-bold">Booking # {bookingId}</h2>
+          <h2 className=" text-3xl font-bold dark:text-gray-200">
+            Booking # {bookingId}
+          </h2>
           <BookingStatus status={status} />
         </div>
         <Link
