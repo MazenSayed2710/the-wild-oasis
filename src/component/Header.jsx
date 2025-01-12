@@ -18,22 +18,19 @@ function Header() {
   const [isActive, setIsActive] = useState("");
   const ref = useOutside(() => setIsActive(""));
   const { data } = useUser();
-
   return (
     <header
       className=" col-start-2 flex items-center justify-end gap-3 px-10 dark:bg-blue-1"
       ref={ref}
     >
       <img
-        src={data.data.user.user_metadata.avatar}
+        src={data.user.user_metadata.avatar}
         width={30}
         height={30}
         className=" h-9 w-9 rounded-full object-cover"
         alt="avatar"
       />
-      <p className="dark:text-gray-100">
-        {data.data.user.user_metadata.fullName}
-      </p>
+      <p className="dark:text-gray-100">{data.user.user_metadata.fullName}</p>
       <button
         onClick={() => {
           navigate("/account");

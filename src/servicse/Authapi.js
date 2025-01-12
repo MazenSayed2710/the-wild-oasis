@@ -6,13 +6,13 @@ export async function login({ email, password }) {
     password,
   });
   if (error) throw new Error(error.message);
-  return { data };
+  return data;
 }
 
 export async function getUser() {
   const { data } = await supabase.auth.getUser();
 
-  return { data };
+  return data;
 }
 export async function logout() {
   let { error } = await supabase.auth.signOut();

@@ -5,8 +5,8 @@ import MiniSpinner from "../../component/MiniSpinner";
 
 function UpdateUser() {
   const { data } = useUser();
-  const fullName = data?.data.user.user_metadata.fullName;
-  const avatar = data?.data.user.user_metadata.avatar;
+  const fullName = data?.user.user_metadata.fullName;
+  const avatar = data?.user.user_metadata.avatar;
   const { updateuser, isUpdating } = useUpdateUser();
   const [updatedName, setUpdatedName] = useState(fullName);
   const [updatedAvatar, setUpdatedAvatar] = useState(avatar);
@@ -38,7 +38,7 @@ function UpdateUser() {
             className="custom-input dark:border-gray-500 dark:bg-gray-800 dark:text-gray-100"
             type="email"
             id="email"
-            defaultValue={data?.data.user.email}
+            defaultValue={data?.user.email}
             disabled
           />
           <p className=" px-5 text-xl text-red-800"></p>

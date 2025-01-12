@@ -8,7 +8,7 @@ export function useUser() {
   });
   return {
     isLoading,
-    isAuthenticated: data?.data.user?.role === "authenticated" ? true : false,
+    isAuthenticated: data?.user?.role === "authenticated" ? true : false,
     data,
   };
 }
