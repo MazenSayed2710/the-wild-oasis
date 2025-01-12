@@ -19,7 +19,6 @@ export async function logout() {
   if (error) throw new Error(error.message);
 }
 export async function signUp({ fullName, email, password }) {
-  console.log(fullName, email, password);
   let { data, error } = await supabase.auth.signUp({
     email,
     password,
@@ -42,7 +41,6 @@ export async function UpdateUser({ fullName, password, avatar }) {
   if (!password) {
     const imageName = `${Math.random()}-${avatar[0].name}`;
     const imageUrl = `${supabaseUrl}/storage/v1/object/public/cabins-images/${imageName}`;
-    console.log(fullName, password, avatar);
     const { error: storageError } = await supabase.storage
       .from("cabins-images")
       .upload(imageName, avatar[0]);

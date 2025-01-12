@@ -23,7 +23,7 @@ function CheckBoxButtons({ data }) {
   return (
     <>
       {hasBreakfast && (
-        <div className="flex items-center gap-3 bg-gray-50 p-5">
+        <div className="flex items-center gap-3 bg-gray-50 p-5 dark:bg-gray-800 dark:text-gray-200">
           <input
             type="checkbox"
             id="breakfast"
@@ -39,7 +39,7 @@ function CheckBoxButtons({ data }) {
         </div>
       )}
 
-      <div className="flex items-center gap-3 bg-gray-50 p-5">
+      <div className="flex items-center gap-3 bg-gray-50 p-5 dark:bg-gray-800 dark:text-gray-200">
         <input
           type="checkbox"
           id="confirm"

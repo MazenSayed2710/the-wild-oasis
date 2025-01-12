@@ -31,18 +31,29 @@ export async function deleteCabin(id) {
 }
 
 export async function createCabin(obj) {
+  const hasURl = obj.image.toString().startsWith(supabaseUrl);
   const imageName = `${Math.random()}-${obj.image[0].name}`;
   const imageUrl = `${supabaseUrl}/storage/v1/object/public/cabins-images/${imageName}`;
+
+  let res;
 
   const { error: storageError } = await supabase.storage
     .from("cabins-images")
     .upload(imageName, obj.image[0]);
 
-  const { data, error } = await supabase
-    .from("cabins")
-    .insert([{ ...obj, image: imageUrl }])
-    .select();
+  if (hasURl) {
+    res = await supabase
+      .from("cabins")
+      .insert([{ ...obj, image: obj.image }])
+      .select();
+  } else {
+    res = await supabase
+      .from("cabins")
+      .insert([{ ...obj, image: imageUrl }])
+      .select();
+  }
 
+  const { data, error } = res;
   if (error) {
     console.error(error.message);
     throw Error(error.message);

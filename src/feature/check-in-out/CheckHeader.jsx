@@ -6,7 +6,9 @@ function CheckHeader() {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-5">
-        <h2 className=" text-3xl font-bold">Check in Booking # {bookingId}</h2>
+        <h2 className=" text-3xl font-bold dark:text-gray-200">
+          Check in Booking # {bookingId}
+        </h2>
       </div>
       <Link to={-1} className="flex items-center font-semibold text-violet-500">
         <HiArrowLongLeft />
