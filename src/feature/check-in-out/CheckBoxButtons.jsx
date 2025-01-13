@@ -18,7 +18,7 @@ function CheckBoxButtons({ data }) {
   const [addBreakfast, setAddBreakfast] = useState(false);
   const navigate = useNavigate();
   function handleClick() {
-    checkin(bookingId, { onSuccess: () => navigate("/") });
+    checkin(bookingId, { onSuccess: () => navigate("/bookings") });
   }
   return (
     <>
