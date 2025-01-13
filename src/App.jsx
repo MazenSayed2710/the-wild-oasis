@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { DarkmodeContext } from "./feature/hooks/useDarkContext";
 import Layout from "./component/Layout";
 import ProtectRoutes from "./component/ProtectRoutes";
@@ -68,7 +67,6 @@ function App() {
               <Route path="*" element={<ErrorComponent />} />
             </Routes>
           </BrowserRouter>
-          <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </div>
       <Toaster />

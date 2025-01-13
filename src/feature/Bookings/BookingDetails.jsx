@@ -69,7 +69,7 @@ function BookingDetails() {
           <button
             className="rounded-md bg-violet-500 p-3 font-semibold text-gray-200"
             onClick={() =>
-              checkout(bookingId, { onSuccess: () => navigate("/") })
+              checkout(bookingId, { onSuccess: () => navigate("/bookings") })
             }
             disabled={isPending}
           >
