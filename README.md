@@ -54,9 +54,9 @@ daily hotel operations from a single interface.
 
 ![Booking Details](./screenshots/booking-details.png)
 
-### Cabins
+### Account
 
-![Cabins](./screenshots/cabins.png)
+![Account](./screenshots/account.png)
 
 ## 🚀 Getting Started
 
